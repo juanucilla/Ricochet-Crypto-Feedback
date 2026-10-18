@@ -727,39 +727,39 @@ Name of the button for launching the preferences window for accessibility tech l
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/MainWindow.cpp" line="165"/>
+        <location filename="../ui/MainWindow.cpp" line="168"/>
         <source>Version Seperator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.cpp" line="199"/>
+        <location filename="../ui/MainWindow.cpp" line="202"/>
         <source>Remove %1</source>
         <translation>移除%1</translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.cpp" line="200"/>
+        <location filename="../ui/MainWindow.cpp" line="203"/>
         <source>Do you want to permanently remove %1?</source>
         <translation>确定永久移除%1？</translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.qml" line="14"/>
+        <location filename="../ui/MainWindow.qml" line="16"/>
         <source>Groups (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.qml" line="77"/>
+        <location filename="../ui/MainWindow.qml" line="84"/>
         <source>Main Toolbar</source>
         <extracomment>Name of the main toolbar for accessibility tech like screen readers</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.qml" line="79"/>
+        <location filename="../ui/MainWindow.qml" line="86"/>
         <source>Toolbar with connection status, add contact button, and preferences button</source>
         <extracomment>Description of the main toolbar for accessibility tech like screen readers</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.qml" line="100"/>
+        <location filename="../ui/MainWindow.qml" line="107"/>
         <source>Contact pane</source>
         <extracomment>Name of the pane holding the user&apos;s contacts for accessibility tech like screen readers</extracomment>
         <translation type="unfinished"></translation>
@@ -933,7 +933,7 @@ Name of the button for launching the preferences window for accessibility tech l
 <context>
     <name>QCocoaMenuItem</name>
     <message>
-        <location filename="../ui/MainWindow.qml" line="34"/>
+        <location filename="../ui/MainWindow.qml" line="41"/>
         <source>Preference</source>
         <translation>选项</translation>
     </message>

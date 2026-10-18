@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.18)
 project(group_ricochet_tests LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
-find_package(Qt5 5.15 REQUIRED COMPONENTS Core Test Gui Qml Quick Widgets)
+find_package(Qt5 5.15 REQUIRED COMPONENTS Core Test Gui Qml Quick Widgets Network)
 enable_testing()
 add_library(group_core STATIC
     ../../src/ricochet-refresh-qt/groups/GroupManager.cpp
@@ -21,3 +21,14 @@ target_compile_definitions(group_ui_smoke PRIVATE GROUP_QML_PATH="${CMAKE_CURREN
 add_test(NAME group_qml COMMAND group_ui_smoke)
 set_tests_properties(group_qml PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen;QT_QUICK_BACKEND=software")
 set_tests_properties(group_core group_qml PROPERTIES TIMEOUT 20)
+add_executable(dao_ui_smoke dao_ui_smoke.cpp
+    ../../src/ricochet-refresh-qt/groups/DaoClient.cpp
+    ../../src/ricochet-refresh-qt/groups/DaoClient.h)
+target_link_libraries(dao_ui_smoke PRIVATE Qt5::Widgets Qt5::Qml Qt5::Quick Qt5::Network)
+target_include_directories(dao_ui_smoke PRIVATE ../../src/ricochet-refresh-qt/groups)
+target_compile_definitions(dao_ui_smoke PRIVATE DAO_QML_PATH="${CMAKE_CURRENT_SOURCE_DIR}/../../src/ricochet-refresh-qt/ui/DaoWindow.qml")
+if(MSVC)
+    target_compile_options(dao_ui_smoke PRIVATE /utf-8)
+endif()
+add_test(NAME dao_qml COMMAND dao_ui_smoke)
+set_tests_properties(dao_qml PROPERTIES TIMEOUT 20 ENVIRONMENT "QT_QPA_PLATFORM=offscreen;QT_QUICK_BACKEND=software")

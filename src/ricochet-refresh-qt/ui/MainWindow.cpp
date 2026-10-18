@@ -32,6 +32,7 @@
 
 #include "ui/MainWindow.h"
 #include "groups/GroupManager.h"
+#include "groups/DaoClient.h"
 #include "groups/GroupTransport.h"
 #include "ui/Clipboard.h"
 #include "ui/ContactsModel.h"
@@ -135,6 +136,8 @@ bool MainWindow::showUI()
             + QStringLiteral("/groups.json"), this);
     new GroupTransport(groups, this);
     qml->rootContext()->setContextProperty(QLatin1String("groupManager"), groups);
+    qml->rootContext()->setContextProperty(QLatin1String("daoClient"), new DaoClient(this,
+        QFileInfo(SettingsObject::defaultFile()->filePath()).absolutePath() + QStringLiteral("/dao-pending.json")));
 
     qml->load(QUrl(QLatin1String("qrc:/ui/main.qml")));
 

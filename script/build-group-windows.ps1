@@ -28,6 +28,9 @@ try {
     New-Item -ItemType Directory -Force -Path $destination | Out-Null
     Copy-Item -LiteralPath 'build-group\ricochet-refresh-qt\Release\group-ricochet.exe' -Destination $destination
     Copy-Item -LiteralPath 'GROUP_RICOCHET.md','LICENSE' -Destination $destination
+    New-Item -ItemType Directory -Force -Path (Join-Path $destination 'doc'),(Join-Path $destination 'services\dao') | Out-Null
+    Copy-Item -LiteralPath 'doc\DAO-PREVIEW.md' -Destination (Join-Path $destination 'doc')
+    Copy-Item -LiteralPath 'services\dao\ledger.py','services\dao\server.py' -Destination (Join-Path $destination 'services\dao')
     & (Join-Path $qtDirectory 'bin\windeployqt.exe') --release --no-translations --qmldir src/ricochet-refresh-qt/ui (Join-Path $destination 'group-ricochet.exe')
     Check-Exit 'Deploy Qt'
     if ($TorBinary) {

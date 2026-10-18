@@ -36,6 +36,11 @@ qrc_*.cpp
 *.qm
 
 # Other
+__pycache__/
+build-*.log
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
 *.user
 *.user.*
 .DS_Store

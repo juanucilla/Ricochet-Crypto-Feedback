@@ -5,6 +5,11 @@ no clock or energy calculator. Upstream: https://github.com/blueprint-freespeech
 
 ## Implemented preview
 
+An additional **local-only DAO credit preview** now exists on desktop and Android:
+see [DAO-PREVIEW.md](doc/DAO-PREVIEW.md) for setup, implemented features and security
+boundaries. Android does not yet implement Tor chat; LiquidFeedback is not yet
+integrated on either platform. The following group-chat features are desktop-only.
+
 - Fixed rosters of 2–12 members, including the creator; explicit invitations.
 - Group activation only after every participant accepts roster disclosure.
 - Direct per-recipient delivery through existing authenticated Tor contact

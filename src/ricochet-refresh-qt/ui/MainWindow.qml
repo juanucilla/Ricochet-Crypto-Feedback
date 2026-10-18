@@ -9,10 +9,17 @@ ApplicationWindow {
     id: window
     title: "group-ricochet"
     GroupsWindow { id: groupsWindow }
+    DaoWindow { id: daoWindow }
     statusBar: StatusBar {
+        Row {
         Button {
             text: qsTr("Groups (%1)").arg(groupManager.groups.length)
             onClicked: { groupsWindow.show(); groupsWindow.raise(); groupsWindow.requestActivate() }
+        }
+        Button {
+            text: "DAO (test locale)"
+            onClicked: { daoWindow.show(); daoWindow.raise(); daoClient.refresh() }
+        }
         }
     }
     visibility: Window.AutomaticVisibility

@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/ui">
         <file>GroupsWindow.qml</file>
+        <file>DaoWindow.qml</file>
         <file>main.qml</file>
         <file>AddContactDialog.qml</file>
         <file>ChatMessageArea.qml</file>

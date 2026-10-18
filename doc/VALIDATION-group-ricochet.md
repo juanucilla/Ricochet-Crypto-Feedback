@@ -32,3 +32,26 @@ reconnection/load tests, other operating systems, independent security review,
 complete translation coverage, or redistribution compliance for a public binary
 release. The implemented fixed-roster application protocol differs from the
 future native-channel design in ADR-001; see GROUP_RICOCHET.md for limits.
+
+## DAO desktop/Android vertical slice (18 October 2026)
+
+- SQLite ledger/API: 7 tests pass, including concurrent spends, role checks,
+  caps, integer validation, replay/conflicting IDs, atomic accounting and restart.
+- Qt CTest: 3/3 suites pass (existing group core/UI plus new DAO QML loading).
+- Real Qt client -> temporary authenticated local service -> ledger transfer:
+  25 units booked, balances 75/25; populated DAO screen visually inspected.
+- Android SDK build, local debug signature verification and emulator installation:
+  passed. Native Activity starts; application crash log empty during the check.
+- Android UI input, authenticated refresh, transfer confirmation and updated
+  balance against a temporary ledger: passed, balances 75/25.
+- Final updated portable app `--smoke-test`: exit 0 and UI ready with software
+  rendering. A default-renderer run timed out before UI ready; cause not established.
+  The provided start-desktop-preview.ps1 uses the verified software mode.
+- The first Android UI automation attempts failed because input events closed
+  the Activity or lost credential characters during IME startup. The harness now
+  waits for focus and enters short chunks. These were not treated as successful
+  end-to-end tests. An early emulator System UI stall was also observed.
+
+These are LOCAL, fake-credit tests. They do not establish Tor connectivity,
+production security, independent audit, physical-device compatibility,
+LiquidFeedback parity or Android group-chat operation. See DAO-PREVIEW.md.

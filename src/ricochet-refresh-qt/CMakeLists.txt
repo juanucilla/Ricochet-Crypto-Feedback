@@ -201,6 +201,8 @@ add_dependencies(ricochet-refresh-qt pluggables-hpp)
 
 set(RICOCHET_SOURCE
     groups/GroupManager.cpp
+    groups/DaoClient.cpp
+    groups/DaoClient.h
     groups/GroupManager.h
     groups/GroupTransport.cpp
     groups/GroupTransport.h
@@ -240,6 +242,7 @@ set(RICOCHET_SOURCE
 
 set(RICOCHET_SOURCE_QML
     ui/GroupsWindow.qml
+    ui/DaoWindow.qml
     ui/ChatWindow.qml
     ui/ContactActions.qml
     ui/dummy.qml
