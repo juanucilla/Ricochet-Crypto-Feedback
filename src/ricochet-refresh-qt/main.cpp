@@ -90,7 +90,7 @@ int main(int argc, char *argv[]) try
     });
     if (smoke) qCritical("GROUP_SMOKE: application constructed");
     a.setApplicationName(QStringLiteral("group-ricochet"));
-    a.setApplicationDisplayName(QStringLiteral("group-ricochet"));
+    a.setApplicationDisplayName(QStringLiteral("Ricochet Crypto Feedback"));
 #if defined(Q_OS_WIN)
     WindowsEventFilter wef;
     a.installNativeEventFilter(&wef);

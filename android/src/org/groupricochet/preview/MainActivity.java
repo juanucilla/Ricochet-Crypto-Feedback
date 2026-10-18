@@ -35,7 +35,7 @@ public final class MainActivity extends Activity {
         content = new LinearLayout(this); content.setOrientation(LinearLayout.VERTICAL);
         int pad = (int)(20 * getResources().getDisplayMetrics().density);
         content.setPadding(pad, pad, pad, pad); scroll.addView(content); setContentView(scroll);
-        label("group-ricochet", 26);
+        label("Ricochet Crypto Feedback", 26);
         label("DAO · Preview locale", 20);
         label("Solo crediti di prova. Non denaro, non blockchain. Connessione al PC via USB (adb reverse).", 16);
         credential = field(content, "Credenziale personale del servizio locale", false);

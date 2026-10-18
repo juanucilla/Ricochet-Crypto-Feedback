@@ -1,7 +1,11 @@
-# group-ricochet
+# Ricochet Crypto Feedback
 
 An experimental community messenger combining private desktop group chat with
 an internal DAO-credit wallet preview for Windows and Android, without blockchain.
+
+Previously named `group-ricochet`. The new name does not add cryptocurrency or
+blockchain functionality. Existing profile paths, protocol IDs, Android package
+and build artifact names stay unchanged for compatibility.
 
 Built on [Ricochet Refresh](https://github.com/blueprint-freespeech/ricochet-refresh)
 by **Blueprint for Free Speech**, continuing the original Ricochet work by John

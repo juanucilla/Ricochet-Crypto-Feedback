@@ -6,7 +6,7 @@ import QtQuick.Dialogs 1.3
 
 ApplicationWindow {
     id: daoWindow
-    title: "group-ricochet · DAO locale sperimentale"
+    title: "Ricochet Crypto Feedback · DAO locale sperimentale"
     width: 760; height: 680
     minimumWidth: 650; minimumHeight: 600
     property var pendingCommand: ({})

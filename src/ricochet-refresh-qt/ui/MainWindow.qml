@@ -7,7 +7,7 @@ import "ContactWindow.js" as ContactWindow
 
 ApplicationWindow {
     id: window
-    title: "group-ricochet"
+    title: "Ricochet Crypto Feedback"
     GroupsWindow { id: groupsWindow }
     DaoWindow { id: daoWindow }
     statusBar: StatusBar {

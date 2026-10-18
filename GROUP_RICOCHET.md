@@ -1,4 +1,4 @@
-# group-ricochet (experimental preview)
+# Ricochet Crypto Feedback (experimental preview)
 
 This fork adds small private groups to Ricochet Refresh's Qt frontend. It has
 no clock or energy calculator. Upstream: https://github.com/blueprint-freespeech/ricochet-refresh.
