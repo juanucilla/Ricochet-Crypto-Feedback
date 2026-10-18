@@ -19,8 +19,11 @@ branch revision. Exit 0: available; 1: reference unavailable/changed licence sta
 2: inconclusive (network, API limits, service errors). A 404 means not publicly
 accessible through that endpoint, not proof the repository was deleted.
 
-A daily Codex check reports meaningful changes only. New mirror commits are
-informational and are never automatically incorporated. If availability changes,
+The check belongs to the software repository, not to a scheduled Codex chat.
+There is no external scheduled chat monitor. The supplied script is an explicit
+development check, not yet a periodic runtime feature in the desktop/Android UI.
+New mirror commits are informational and are never automatically incorporated.
+If availability changes,
 retain this record and any separately preserved lawful copies; review official
 sources and licence provenance before choosing a replacement. This check does not
 create a backup and this repository currently contains no source archive of the mirror.
