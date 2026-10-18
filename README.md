@@ -1,4 +1,12 @@
-# Ricochet Refresh Alpha
+# group-ricochet
+
+Experimental private group messaging fork of Ricochet Refresh, independently
+developed and not endorsed by Blueprint for Free Speech or the Tor Project.
+See [features, limitations and build/test instructions](GROUP_RICOCHET.md).
+
+The upstream project description follows.
+
+## Ricochet Refresh Alpha
 
 ## ⚠️ Warning ⚠️
 This is the development branch of Ricochet-Refresh. Things here may be unstable, in-flight, and untested. For the current release version, see the [maint-3.0](https://github.com/blueprint-freespeech/ricochet-refresh/tree/maint-3.0) branch.

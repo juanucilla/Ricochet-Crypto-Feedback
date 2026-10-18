@@ -32,6 +32,7 @@
  */
 
 #include "ui/MainWindow.h"
+#include <cstdio>
 #include "utils/Settings.h"
 
 #include <libtego_callbacks.hpp>
@@ -82,6 +83,14 @@ int main(int argc, char *argv[]) try
     }
 
     QApplication a(argc, argv);
+    const bool smoke = a.arguments().contains(QStringLiteral("--smoke-test"));
+    if (smoke) qInstallMessageHandler([](QtMsgType, const QMessageLogContext &, const QString &message) {
+        std::fprintf(stderr, "%s\n", qPrintable(message));
+        std::fflush(stderr);
+    });
+    if (smoke) qCritical("GROUP_SMOKE: application constructed");
+    a.setApplicationName(QStringLiteral("group-ricochet"));
+    a.setApplicationDisplayName(QStringLiteral("group-ricochet"));
 #if defined(Q_OS_WIN)
     WindowsEventFilter wef;
     a.installNativeEventFilter(&wef);
@@ -89,6 +98,7 @@ int main(int argc, char *argv[]) try
 
     tego_context* tegoContext = nullptr;
     tego_initialize(&tegoContext, tego::throw_on_error());
+    if (smoke) qCritical("GROUP_SMOKE: backend initialized");
 
     auto tego_cleanup = tego::make_scope_exit([=]() -> void {
         tego_uninitialize(tegoContext, tego::throw_on_error());
@@ -109,6 +119,7 @@ int main(int argc, char *argv[]) try
     QString error;
     QLockFile *lock = 0;
     if (!initSettings(settings.data(), &lock, error)) {
+        if (smoke) { qCritical("GROUP_SMOKE: profile initialization failed"); return 1; }
         if (error.isEmpty()) {
             return 0;
         }
@@ -116,6 +127,7 @@ int main(int argc, char *argv[]) try
         return 1;
     }
     QScopedPointer<QLockFile> lockFile(lock);
+    if (smoke) qCritical("GROUP_SMOKE: profile ready");
 
     initTranslation();
 
@@ -184,6 +196,11 @@ int main(int argc, char *argv[]) try
     QScopedPointer<MainWindow> w(new MainWindow);
     if (!w->showUI())
         return 1;
+    if (smoke) qCritical("GROUP_SMOKE: UI ready");
+
+    // Integration check with an explicitly supplied temporary profile directory.
+    if (a.arguments().contains(QStringLiteral("--smoke-test")))
+        QTimer::singleShot(1500, &a, &QApplication::quit);
 
     return a.exec();
 }
@@ -235,6 +252,9 @@ static bool initSettings(SettingsFile *settings, QLockFile **lockFile, QString &
 
     if (args.size() > 1) {
         configPath = args[1];
+    } else if (qApp->applicationName() == QStringLiteral("group-ricochet")) {
+        // A fork must never move or implicitly adopt an upstream identity/profile.
+        configPath = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
     } else {
         // TODO: remove this profile migration after sufficient time has passed (EOY 2021)
         auto legacyConfigPath = []() -> QString {

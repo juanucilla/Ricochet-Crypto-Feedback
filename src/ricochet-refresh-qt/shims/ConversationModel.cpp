@@ -661,7 +661,8 @@ namespace shims
         }
 
         auto row = this->indexOfOutgoingMessage(messageId);
-        Q_ASSERT(row >= 0);
+        // A retired group transport packet or cleared direct message may ACK late.
+        if (row < 0) return;
 
         MessageData &data = messages[row];
         data.status = accepted ? Delivered : Error;

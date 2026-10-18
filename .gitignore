@@ -3,6 +3,13 @@ Makefile
 Makefile.*
 CMakeLists.txt.user
 build/
+build-*/
+.build-tools/
+.qt-sdk/
+aqtinstall.log
+# Earlier clock prototype is preserved locally, outside this fork's scope.
+OROLOGIO_ENERGY.md
+src/ricochet-refresh-qt/ui/OrologioEnergy*
 dist/
 debug
 release

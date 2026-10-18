@@ -24,15 +24,15 @@ set(tego_rs_include_dir
 
 set(tego_rs_outputs
     ${tego_rs_static}
-    ${tego_rs_include_dir}/tego.h
+    ${tego_rs_include_dir}/tego/tego.h
 )
 
 make_directory(${tego_rs_include_dir}/tego)
 
 # hard-link our authord tego headers to tego-rs' include directory
-file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR}/include/tego/tego.hpp ${tego_rs_include_dir}/tego/tego.hpp)
-file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR}/include/tego/utilities.hpp ${tego_rs_include_dir}/tego/utilities.hpp)
-file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR}/include/tego/logger.hpp ${tego_rs_include_dir}/tego/logger.hpp)
+configure_file(include/tego/tego.hpp ${tego_rs_include_dir}/tego/tego.hpp COPYONLY)
+configure_file(include/tego/utilities.hpp ${tego_rs_include_dir}/tego/utilities.hpp COPYONLY)
+configure_file(include/tego/logger.hpp ${tego_rs_include_dir}/tego/logger.hpp COPYONLY)
 
 #
 # tego-rs crate feature flags
@@ -50,7 +50,7 @@ add_custom_command(
     DEPENDS ${tego_rs_sources}
     OUTPUT ${tego_rs_outputs}
     COMMAND ${CMAKE_COMMAND} -E touch build.rs
-    COMMAND env CARGO_TARGET_DIR=${CARGO_TARGET_DIR} RUSTFLAGS=${RUSTFLAGS} cargo build ${CARGO_FLAGS} ${TEGO_RS_FEATURES}
+    COMMAND ${CMAKE_COMMAND} -E env CARGO_TARGET_DIR=${CARGO_TARGET_DIR} RUSTFLAGS=${RUSTFLAGS} cargo build ${CARGO_FLAGS} ${TEGO_RS_FEATURES}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 

@@ -393,6 +393,283 @@ Name of the combobox used to select UI langauge for accessibility tech like scre
     </message>
 </context>
 <context>
+    <name>GroupManager</name>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="54"/>
+        <source>Identity changed. Restart with its own group profile.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="75"/>
+        <source>Group storage cannot be read safely. Original file preserved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="102"/>
+        <source>Group storage is unavailable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="105"/>
+        <source>Group storage limit reached.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="106"/>
+        <source>Cannot create group storage.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="109"/>
+        <source>Cannot save group state. No delivery acknowledgement was sent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="135"/>
+        <source>Group packet exceeds the transport limit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="151"/>
+        <source>Choose a title and 1–11 distinct accepted contacts (maximum 32 groups).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="170"/>
+        <source>All group members must first be accepted contacts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="200"/>
+        <source>The group is not ready. Check invitations and contacts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="202"/>
+        <source>Use 1–500 characters. This preview stores up to 250 messages per group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="208"/>
+        <source>Text contains too many escaped characters for the transport. Shorten it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="251"/>
+        <source>Group invitation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="299"/>
+        <source>New group message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="395"/>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../groups/GroupManager.cpp" line="417"/>
+        <source>Original message unavailable</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GroupsWindow</name>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="8"/>
+        <location filename="../ui/GroupsWindow.qml" line="66"/>
+        <source>Private groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="67"/>
+        <source>+ New group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="78"/>
+        <source>unread</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="78"/>
+        <source>muted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="85"/>
+        <source>Experimental · All members must use group-ricochet and be mutual accepted contacts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="93"/>
+        <source>Choose a group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="94"/>
+        <source>Members</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="95"/>
+        <source>Mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="101"/>
+        <source>Invitation: review the members before accepting. Your onion identity will be visible to everyone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="102"/>
+        <source>Waiting for every participant to accept. The owner must be online to complete setup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="103"/>
+        <source>This fixed-roster group is closed. Its history remains local.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="107"/>
+        <source>Review and accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="108"/>
+        <source>Decline…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="110"/>
+        <source>Search this group locally…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="194"/>
+        <source>Choose a name and 1–11 accepted contacts. Everyone must already know every other member. All participants see the roster.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="148"/>
+        <source>Delivered %1/%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="148"/>
+        <source>retry expired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="153"/>
+        <source>Reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="161"/>
+        <source>↓ Latest messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="165"/>
+        <source>Cancel reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="181"/>
+        <source>send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="181"/>
+        <source>new line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="183"/>
+        <source>Retry delivery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="184"/>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="190"/>
+        <source>Create a private group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="195"/>
+        <source>Group name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="214"/>
+        <source>%1 contacts selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="217"/>
+        <source>Create and invite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="227"/>
+        <source>Group members and consent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="231"/>
+        <source>Your onion identity and the member list are shared with everyone in this group. Messages travel directly over Tor. New messages require every member&apos;s consent. In this preview, leaving closes the whole group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="236"/>
+        <source>Owner: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="238"/>
+        <source>Accept and share my identity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="239"/>
+        <source>Close this group for everyone…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="240"/>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="246"/>
+        <source>Close group?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="249"/>
+        <source>Leaving or declining closes this fixed-roster group for everyone once the owner receives the request. Local history is retained. Continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="251"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Prekliči</translation>
+    </message>
+    <message>
+        <location filename="../ui/GroupsWindow.qml" line="252"/>
+        <source>Close group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LanguagesModel</name>
     <message>
         <location filename="../ui/LanguagesModel.cpp" line="40"/>
@@ -403,7 +680,7 @@ Name of the combobox used to select UI langauge for accessibility tech like scre
 <context>
     <name>Main</name>
     <message>
-        <location filename="../main.cpp" line="115"/>
+        <location filename="../main.cpp" line="126"/>
         <source>Ricochet Error</source>
         <translation>Napaka Ricochet</translation>
     </message>
@@ -450,34 +727,39 @@ Name of the button for launching the preferences window for accessibility tech l
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/MainWindow.cpp" line="151"/>
+        <location filename="../ui/MainWindow.cpp" line="165"/>
         <source>Version Seperator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.cpp" line="185"/>
+        <location filename="../ui/MainWindow.cpp" line="199"/>
         <source>Remove %1</source>
         <translation>Odstrani  %1</translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.cpp" line="186"/>
+        <location filename="../ui/MainWindow.cpp" line="200"/>
         <source>Do you want to permanently remove %1?</source>
         <translation>Ali želte za vselej odstraniti %1?</translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.qml" line="70"/>
+        <location filename="../ui/MainWindow.qml" line="14"/>
+        <source>Groups (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/MainWindow.qml" line="77"/>
         <source>Main Toolbar</source>
         <extracomment>Name of the main toolbar for accessibility tech like screen readers</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.qml" line="72"/>
+        <location filename="../ui/MainWindow.qml" line="79"/>
         <source>Toolbar with connection status, add contact button, and preferences button</source>
         <extracomment>Description of the main toolbar for accessibility tech like screen readers</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainWindow.qml" line="93"/>
+        <location filename="../ui/MainWindow.qml" line="100"/>
         <source>Contact pane</source>
         <extracomment>Name of the pane holding the user&apos;s contacts for accessibility tech like screen readers</extracomment>
         <translation type="unfinished"></translation>
@@ -651,7 +933,7 @@ Name of the button for launching the preferences window for accessibility tech l
 <context>
     <name>QCocoaMenuItem</name>
     <message>
-        <location filename="../ui/MainWindow.qml" line="27"/>
+        <location filename="../ui/MainWindow.qml" line="34"/>
         <source>Preference</source>
         <translation>Izbira</translation>
     </message>

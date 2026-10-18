@@ -5,6 +5,7 @@
 #include "shims/UserIdentity.h"
 #include "shims/ConversationModel.h"
 #include "shims/OutgoingContactRequest.h"
+#include "groups/GroupTransport.h"
 
 namespace
 {
@@ -330,7 +331,8 @@ namespace
             auto conversationModel = contactUser->conversation();
             Q_ASSERT(conversationModel != nullptr);
 
-            conversationModel->messageReceived(messageId, QDateTime::fromMSecsSinceEpoch(safe_cast<qint64>(timestamp)), messageString);
+            if (!GroupTransport::receive(contactId, messageString))
+                conversationModel->messageReceived(messageId, QDateTime::fromMSecsSinceEpoch(safe_cast<qint64>(timestamp)), messageString);
         });
     }
 
@@ -344,6 +346,7 @@ namespace
         QString contactId = tegoUserIdToContactId(userId);
         push_task([=]() -> void
         {
+            if (GroupTransport::acknowledge(contactId, messageId)) return;
             auto contactsManager = shims::UserIdentity::userIdentity->getContacts();
             auto contactUser = contactsManager->getShimContactByContactId(contactId);
             auto conversationModel = contactUser->conversation();

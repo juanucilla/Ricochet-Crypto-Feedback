@@ -31,6 +31,8 @@
  */
 
 #include "ui/MainWindow.h"
+#include "groups/GroupManager.h"
+#include "groups/GroupTransport.h"
 #include "ui/Clipboard.h"
 #include "ui/ContactsModel.h"
 #include "ui/LanguagesModel.h"
@@ -118,14 +120,26 @@ MainWindow::~MainWindow()
 
 bool MainWindow::showUI()
 {
+    const bool smoke = qApp->arguments().contains(QStringLiteral("--smoke-test"));
+    if (smoke) {
+        connect(qml, &QQmlEngine::warnings, this, [](const QList<QQmlError> &errors) {
+            for (const auto &error : errors) qCritical().noquote() << error.toString();
+        });
+    }
     qml->rootContext()->setContextProperty(QLatin1String("userIdentity"), shims::UserIdentity::userIdentity);
     qml->rootContext()->setContextProperty(QLatin1String("torControl"), shims::TorControl::torControl);
     qml->rootContext()->setContextProperty(QLatin1String("torInstance"), shims::TorManager::torManager);
     qml->rootContext()->setContextProperty(QLatin1String("uiMain"), this);
+    auto groups = new GroupManager(QString(),
+        QFileInfo(SettingsObject::defaultFile()->filePath()).absolutePath()
+            + QStringLiteral("/groups.json"), this);
+    new GroupTransport(groups, this);
+    qml->rootContext()->setContextProperty(QLatin1String("groupManager"), groups);
 
     qml->load(QUrl(QLatin1String("qrc:/ui/main.qml")));
 
     if (qml->rootObjects().isEmpty()) {
+        if (smoke) { qCritical("GROUP_SMOKE: QML loading failed"); return false; }
         // Assume this is only applicable to technical users; not worth translating or simplifying.
         QMessageBox::critical(0, QStringLiteral("Ricochet"),
             QStringLiteral("An error occurred while loading the Ricochet UI.\n\n"

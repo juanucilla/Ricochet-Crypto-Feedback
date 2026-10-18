@@ -119,7 +119,10 @@ if (WIN32)
 else()
     add_executable(ricochet-refresh-qt)
 endif()
-set_target_properties(ricochet-refresh-qt PROPERTIES OUTPUT_NAME "ricochet-refresh")
+set_target_properties(ricochet-refresh-qt PROPERTIES OUTPUT_NAME "group-ricochet")
+if(MSVC)
+    target_compile_options(ricochet-refresh-qt PRIVATE /Zc:preprocessor /utf-8)
+endif()
 
 option(ENABLE_PLUGGABLE_TRANSPORTS "Enable integrating pluggable-transports from the tor-expert-bundle" OFF)
 
@@ -189,7 +192,7 @@ add_custom_command(
     DEPENDS ${RICOCHET_PLUGGABLES_SOURCE}
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/pluggables.hpp
     # generate pluggables.hpp header
-    COMMAND env CARGO_TARGET_DIR=${CMAKE_CURRENT_BINARY_DIR} RUST_BACKTRACE=full cargo run --bin build_pluggables ${CMAKE_CURRENT_SOURCE_DIR}/pluggables.hpp ${PT_CONFIG_JSON}
+    COMMAND ${CMAKE_COMMAND} -E env CARGO_TARGET_DIR=${CMAKE_CURRENT_BINARY_DIR} RUST_BACKTRACE=full cargo run --bin build_pluggables ${CMAKE_CURRENT_SOURCE_DIR}/pluggables.hpp ${PT_CONFIG_JSON}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 add_custom_target(pluggables-hpp
@@ -197,6 +200,10 @@ add_custom_target(pluggables-hpp
 add_dependencies(ricochet-refresh-qt pluggables-hpp)
 
 set(RICOCHET_SOURCE
+    groups/GroupManager.cpp
+    groups/GroupManager.h
+    groups/GroupTransport.cpp
+    groups/GroupTransport.h
     shims/ContactIDValidator.cpp
     shims/ContactIDValidator.h
     shims/ContactsManager.cpp
@@ -232,6 +239,7 @@ set(RICOCHET_SOURCE
 )
 
 set(RICOCHET_SOURCE_QML
+    ui/GroupsWindow.qml
     ui/ChatWindow.qml
     ui/ContactActions.qml
     ui/dummy.qml

@@ -7,7 +7,14 @@ import "ContactWindow.js" as ContactWindow
 
 ApplicationWindow {
     id: window
-    title: "Ricochet"
+    title: "group-ricochet"
+    GroupsWindow { id: groupsWindow }
+    statusBar: StatusBar {
+        Button {
+            text: qsTr("Groups (%1)").arg(groupManager.groups.length)
+            onClicked: { groupsWindow.show(); groupsWindow.raise(); groupsWindow.requestActivate() }
+        }
+    }
     visibility: Window.AutomaticVisibility
 
     width: 650
